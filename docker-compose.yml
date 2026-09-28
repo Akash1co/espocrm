@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  espocrm:
+    image: espocrm/espocrm:latest
+    ports:
+      - "8080:80"
+    environment:
+      ESPOCRM_DATABASE_HOST: db
+      ESPOCRM_DATABASE_USER: espocrm
+      ESPOCRM_DATABASE_PASSWORD: espocrm_password
+      ESPOCRM_DATABASE_NAME: espocrm
+      ESPOCRM_ADMIN_USERNAME: admin
+      ESPOCRM_ADMIN_PASSWORD: adminpassword
+      ESPOCRM_SITE_URL: "http://localhost:8080"
+    depends_on:
+      - db
+    restart: always
+
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: espocrm
+      MYSQL_USER: espocrm
+      MYSQL_PASSWORD: espocrm_password
+    volumes:
+      - espocrm-db-data:/var/lib/mysql
+    restart: always
+
+volumes:
+  espocrm-db-data:
