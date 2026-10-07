@@ -1,0 +1,9 @@
+[
+    {
+        "label": "Smart Reminder Preferences",
+        "rows": [
+            [{"name": "enableSmartReminders"}, {"name": "reminderDelayDays"}],
+            [{"name": "groqAiAutoSchedule"}, false]
+        ]
+    }
+]

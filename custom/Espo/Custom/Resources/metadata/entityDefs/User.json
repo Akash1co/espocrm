@@ -1,0 +1,20 @@
+{
+    "fields": {
+        "enableSmartReminders": {
+            "type": "bool",
+            "default": true,
+            "isCustom": true
+        },
+        "reminderDelayDays": {
+            "type": "enum",
+            "options": ["1", "2", "3", "5", "7"],
+            "default": "3",
+            "isCustom": true
+        },
+        "groqAiAutoSchedule": {
+            "type": "bool",
+            "default": true,
+            "isCustom": true
+        }
+    }
+}
