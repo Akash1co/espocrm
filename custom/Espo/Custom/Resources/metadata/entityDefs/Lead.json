@@ -1,0 +1,10 @@
+{
+    "indexes": {
+        "idx_lead_status_created": {
+            "columns": ["status", "createdAt", "deleted"]
+        },
+        "idx_lead_assigned_user": {
+            "columns": ["assignedUserId", "deleted"]
+        }
+    }
+}
