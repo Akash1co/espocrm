@@ -26,6 +26,7 @@
 !/custom/Espo/Custom/.htaccess
 !/custom/Espo/Modules/.htaccess
 /install/config.php
+/.env
 
 client/css/espo/*
 client/lib/*
