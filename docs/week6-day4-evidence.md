@@ -32,8 +32,8 @@
 - Commit 1: `65bfffcdc5` - `docs: add EspoCRM week 6 day 4 API documentation`
 - Commit 2: the deployment and evidence commit containing this file.
 - Rebase status: completed with `git fetch upstream` and `git rebase upstream/master`; the configured upstream repository has no `upstream/main` ref.
-- Push status: not attempted yet.
-- Pull request status: not attempted yet.
+- Push status: completed to `origin/feat/w6d4-3m-Akasha-G`.
+- Pull request status: not created or inspected; GitHub CLI is not installed. GitHub offered this creation URL: https://github.com/Akash1co/espocrm/pull/new/feat/w6d4-3m-Akasha-G
 
 ## Screenshots To Attach
 
