@@ -1,0 +1,6 @@
+{
+    "releaseVersion": "1.0.0-final",
+    "buildStatus": "production-ready",
+    "deploymentPlatform": "Railway",
+    "containerized": true
+}

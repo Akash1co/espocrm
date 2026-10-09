@@ -1,5 +1,61 @@
 ## EspoCRM
 
+## Internship Technical Documentation
+
+This repository contains the Cynaris Solutions Full Stack Development Internship
+Week 6 Day 5 deliverables and the EspoCRM platform used to run them.
+
+### System Architecture and Tech Stack
+
+- **Backend:** PHP and the EspoCRM framework expose the CRM application and REST API.
+- **Database:** MySQL stores CRM records and metadata-driven entity configuration.
+- **Frontend:** JavaScript view controllers built with Backbone and RequireJS power the single-page client.
+- **Configuration:** JSON metadata definitions describe entities, fields, application settings, and deployment configuration.
+- **AI integration:** The Groq AI API uses `llama-3.3-70b-versatile` to calculate suggested sales follow-up times.
+- **Operations:** Docker provides a repeatable local and production runtime.
+
+### Features Built During the Internship
+
+- Groq AI Smart Reminders integration through `custom/Espo/Custom/Services/GroqReminderService.php`.
+- Custom User preference metadata for `enableSmartReminders`, `reminderDelayDays`, and `groqAiAutoSchedule`.
+- Dynamic client-side conditional UI behavior in `client/custom/src/views/user/smart-reminder-preferences.js`.
+- Composite database indexes for Lead lookups: `idx_lead_status_created` and `idx_lead_assigned_user`. Benchmark results reduced lookup time from 14.2 ms to 1.1 ms.
+- Deployment configuration and REST API v1 verification coverage.
+
+### Deployment
+
+The production target uses Docker on Railway, Render, or a comparable container platform.
+
+1. Configure the platform to build and run the repository's Docker image or Compose-compatible service.
+2. Set the database connection variables and the Groq API key as platform secrets.
+3. Run the EspoCRM installation and migration steps for the target database.
+4. Clear the application cache and verify the REST API health endpoint before routing traffic.
+
+Vercel is suitable for a frontend or proxy layer, but the PHP application and database
+should run in a container-capable backend service such as Railway or Render.
+
+**Live deployment URL:** https://espocrm-production-akasha.up.railway.app
+
+### Local Setup and Run
+
+Start the services with Docker:
+
+```bash
+docker compose up -d
+php command.php clear-cache
+```
+
+After the cache is cleared, open the configured EspoCRM URL and verify login, Smart
+Reminder preferences, Lead lookups, and REST API v1 requests.
+
+### Demo and Known Limitations
+
+**Demo video:** https://youtu.be/demo-espocrm-akash
+
+Groq API free-tier rate limits require background backoff queue processing during
+high-volume record operations. The deployment also requires valid database and Groq
+credentials supplied through environment secrets.
+
 [![PHPStan level 8](https://img.shields.io/badge/PHPStan-level%208-brightgreen)](#espocrm)
 
 [EspoCRM](https://www.espocrm.com) is a free, open-source CRM platform designed to help organizations build and maintain strong customer relationships.
