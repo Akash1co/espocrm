@@ -1,0 +1,13 @@
+{
+    "environment": "production",
+    "version": "1.0.0-w6d4",
+    "apiEndpoints": [
+        "GET /api/v1/Lead",
+        "GET /api/v1/Opportunity",
+        "GET /api/v1/Account"
+    ],
+    "groqAiIntegration": {
+        "status": "active",
+        "model": "llama-3.3-70b-versatile"
+    }
+}
